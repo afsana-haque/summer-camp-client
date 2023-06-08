@@ -21,7 +21,7 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <Link to='/'><img src="https://i.ibb.co/0tJTGsc/v1033-a-22-a-removebg-preview.png" alt="" className='h-24 hidden lg:flex' /></Link>
+                <Link to='/'><img src="https://i.ibb.co/cgt0bFp/logo.png" alt="" className='h-20 hidden lg:flex' /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

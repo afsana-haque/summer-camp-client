@@ -9,7 +9,7 @@ const Footer = () => {
         <footer>
             <div className="footer p-10 bg-base-200 text-base-content">
                 <div>
-                    <img src="https://i.ibb.co/0tJTGsc/v1033-a-22-a-removebg-preview.png" alt="" className='h-28' />
+                    <img src="https://i.ibb.co/cgt0bFp/logo.png" alt="" className='h-28' />
                     <p>Quisque quis dignissim elit. Aliquam et<br/> augue aliquet orci maximus convallis id vitae<br/> augue. Phasellus elementum commodo <br/>aliquet.</p>
                     <div className='flex gap-3 text-2xl mt-3'>
                     <Link><FaFacebookF/></Link>
