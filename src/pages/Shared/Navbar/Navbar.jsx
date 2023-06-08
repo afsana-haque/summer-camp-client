@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><Link>Classes</Link></li>
         <li><Link> Dashboard</Link></li>
         <li><Link>logout</Link></li>
-        <li><Link>login</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
