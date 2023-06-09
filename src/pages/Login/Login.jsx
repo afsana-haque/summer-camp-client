@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const {singIn} = useContext(AuthContext);
     
     const handleLogin = event => {
         event.preventDefault();
@@ -9,6 +12,23 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        singIn(email, password) 
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+            Swal.fire({
+                title: 'User Login Successful.',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              });
+        })
+        .catch((error) => console.log(error)
+        )
     }
     return (
         <div className="hero min-h-screen bg-base-200">
