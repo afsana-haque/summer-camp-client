@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Instructors from './Instructors';
-// import instructor1 from "../../../assets/instructor2.jpg"
-// import instructor2 from "../../../assets/instructor3.jpg"
-// import instructor3 from "../../../assets/instructor4.jpg"
-// import instructor4 from "../../../assets/instructor5.jpg"
-// import instructor5 from "../../../assets/instructor6.jpg"
-// import instructor6 from "../../../assets/instructor7.jpg"
 
 const PopularInstructors = () => {
     const [popularInstructors, setPopularInstructors] = useState([]);
+
 
     useEffect(() => {
         fetch('instructors.json')
             .then(res => res.json())
             .then(data => {
                 setPopularInstructors(data)
+                console.log(data)
             })
     }, [])
 
