@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
@@ -7,7 +7,9 @@ import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { singIn } = useContext(AuthContext);
-    
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
@@ -25,6 +27,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 });
+                navigate(from, {replace: true});
             })
             .catch((error) => console.log(error)
             )
