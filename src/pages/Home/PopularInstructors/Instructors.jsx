@@ -2,7 +2,7 @@ import React from 'react';
 
 const Instructors = ({ instructors }) => {
     return (
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl mb-10">
                 <figure className="px-10 pt-10">
                     <img src={instructors.image} alt="Shoes" className="rounded-xl" />
                 </figure>

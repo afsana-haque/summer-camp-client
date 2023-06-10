@@ -50,9 +50,7 @@ const Login = () => {
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
-                    <div className="form-control mt-6">
-                        <button className="btn btn-warning bg-orange-950 text-white">Login</button>
-                    </div>
+                    <input className="btn btn-warning bg-orange-950 text-white" type="submit" value="Login" />
                     <p className='font-semibold'><small>New here? <Link to='/signup' className='text-orange-900'>Create a New Account</Link></small></p>
                 </form>
             </div>

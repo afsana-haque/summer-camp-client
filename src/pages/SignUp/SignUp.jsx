@@ -6,14 +6,23 @@ import { useForm } from 'react-hook-form';
 const SignUp = () => {
     const [error, setError] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { createUser } = useContext(AuthContext);
 
     const onSubmit = data => {
         console.log(data)
-        if(data.password !== data.confirmPassword){
-            setError("password not match")
+        if (data.password !== data.confirmPassword) {
+            setError("password dose not match")
             return;
         }
-    
+
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch((error) => console.log(error)
+            )
+
     };
 
     return (
@@ -39,23 +48,24 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" {...register("password", { required: true,
-                             minLength: 6,
-                              maxLength: 20,
-                              pattern:/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])$/
-                               })} name='password' placeholder="password" className="input input-bordered" />
+                        <input type="password" {...register("password", {
+                            required: true,
+                            minLength: 6,
+                            maxLength: 20,
+                            pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                        })} name='password' placeholder="password" className="input input-bordered" />
                         {errors.password?.type === 'minLength' && <p className='text-red-600 mt-4'>Password must be 6 character</p>}
                         {errors.password?.type === 'maxLength' && <p className='text-red-600 mt-4'>Password must be less 20 character</p>}
-                        {errors.password?.type === 'maxLength' && <p className='text-red-600 mt-4'>Password must be less 20 character</p>}
+                        {errors.password?.type === 'pattern' && <p className='text-red-600 mt-4'>Password must be less one uppercase one lower case, one number and one special character</p>}
                     </div>
-                    <div className="form-control">
+                    <div className="form-control ">
                         <label className="label">
                             <span className="label-text">Confirm password</span>
                         </label>
-                        <input type="password" {...register("confirmPassword", { required: true})} name='confirmPassword' placeholder="Confirm password" className="input input-bordered" />
+                        <input type="password" {...register("confirmPassword", { required: true })} name='confirmPassword' placeholder="Confirm password" className="input input-bordered" />
                     </div>
                     {error && <p>{error}</p>}
-                    
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
