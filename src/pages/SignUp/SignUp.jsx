@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const [error, setError] = useState('');
@@ -83,6 +84,7 @@ const SignUp = () => {
                     </div>
                     <input className="btn btn-warning bg-orange-950 text-white" type="submit" value="Sign Up" />
                     <p className='font-semibold'><small>Already registered? <Link to='/login' className='text-orange-400'> Go to log in</Link></small></p>
+                    <SocialLogin></SocialLogin>
                 </form>
             </div>
         </div>

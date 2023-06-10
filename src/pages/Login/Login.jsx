@@ -3,19 +3,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { singIn } = useContext(AuthContext);
-
-    // const handleLogin = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(email, password);
-
-
-    // }
+    
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
@@ -59,6 +51,7 @@ const Login = () => {
                     </div>
                     <input className="btn btn-warning bg-orange-950 text-white" type="submit" value="Login" />
                     <p className='font-semibold'><small>New here? <Link to='/signup' className='text-orange-900'>Create a New Account</Link></small></p>
+                    <SocialLogin></SocialLogin>
                 </form>
             </div>
         </div>
