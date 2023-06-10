@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const [error, setError] = useState('');
@@ -19,6 +20,13 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'User Created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch((error) => console.log(error)
             )
