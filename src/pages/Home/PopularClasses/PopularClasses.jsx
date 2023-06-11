@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PopularClass from './PopularClass';
 
 
 const PopularClasses = () => {
@@ -15,9 +16,15 @@ const PopularClasses = () => {
     }, [])
     return (
         <div className='my-14'>
-            <h3 className='text-3xl font-bold my-10 text-center'>Popular Classes Section</h3>
-            
-
+           
+            <div className='grid  grid-cols-1 lg:grid-cols-3 gap-5'>
+                {
+                    popularClasses.map(popularClass => <PopularClass 
+                    key={popularClass._id}
+                    popularClass={popularClass}
+                    ></PopularClass>)
+                }
+            </div>
         </div>
     );
 };

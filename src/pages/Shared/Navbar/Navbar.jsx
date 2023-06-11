@@ -4,8 +4,9 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
-    const [isDarkMode, setIsDarkMode] = useState(() => false);
+    const { user, logOut, isDarkMode, setIsDarkMode} = useContext(AuthContext);
+   
+    console.log(isDarkMode)
 
     const handleLogOut = () => {
         logOut()
