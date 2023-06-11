@@ -9,7 +9,7 @@ const PopularClass = ({ popularClass }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>Experience: {instructor}</p>
+                <p>Instructor: {instructor}</p>
                 <p>Total Students: {students}</p>
             </div>
         </div>
