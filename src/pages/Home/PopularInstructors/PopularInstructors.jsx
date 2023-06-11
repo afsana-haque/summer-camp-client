@@ -10,7 +10,7 @@ const PopularInstructors = () => {
             .then(res => res.json())
             .then(data => {
                 setPopularInstructors(data)
-                console.log(data)
+                // console.log(data)
             })
     }, [])
 

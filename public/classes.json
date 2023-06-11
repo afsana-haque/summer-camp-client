@@ -4,7 +4,7 @@
         "name": "Guitar Classes",
         "instructor": "Mehedi Hasan",
         "image":"https://i.ibb.co/ZJJRHdw/close-up-hand-writing-song.jpg",
-        "available_seats": 15,
+        "students": 55,
         "price": 14.7
     },
     {
@@ -12,7 +12,7 @@
         "name": "Violin Classes",
         "instructor": "Tanha Jannat",
         "image":"https://i.ibb.co/WtDwkM9/beautiful-romantic-girls-park-with-violin.jpg",
-        "available_seats": 20,
+        "students": 75,
         "price": 14.7
     },
     {
@@ -20,7 +20,7 @@
         "name": "Piano Classes",
         "instructor": "Afsana Haque",
         "image":"https://i.ibb.co/x2z1N7R/kids-being-part-sunday-school-1.jpg",
-        "available_seats": 19,
+        "students": 80,
         "price": 14.5
     },
     {
@@ -28,7 +28,7 @@
         "name": "Vocal Classes",
         "instructor": "Antu Haque",
         "image":"https://i.ibb.co/z53Tr6j/Class-5-770x440.jpg",
-        "available_seats": 12,
+        "students": 50,
         "price": 12.5
     },
     {
@@ -36,7 +36,7 @@
         "name": "Drum Classes",
         "instructor": "Sayem Sorkar",
         "image":"https://i.ibb.co/C1fbmtf/instructor4.jpg",
-        "available_seats": 9,
+        "students": 49,
         "price": 14.5
     },
     {
@@ -44,7 +44,7 @@
         "name": "Winds Classes",
         "instructor": "Md Riyad",
         "image":"https://i.ibb.co/fd7W3m4/Class-4-770x440.jpg",
-        "available_seats": 9,
+        "students": 65,
         "price": 12.5
     }
 ]
