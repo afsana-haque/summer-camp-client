@@ -11,7 +11,6 @@ const AllClasses = () => {
         .then(data => {
             setAllClasses(data);
             setLoading(false);
-            console.log(data)
         })
     },[])
     return (
