@@ -83,7 +83,7 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" {...register("photo", { required: true })} name='photo' placeholder="Photo URL" className="input input-bordered" />
+                        <input type="text" {...register("photo", { required: true })}  placeholder="Photo URL" className="input input-bordered" />
                         {errors.name && <span className='text-red-700 mt-3'>Photo URL is required</span>}
                     </div>
                     <input className="btn btn-warning bg-orange-950 text-white" type="submit" value="Sign Up" />
