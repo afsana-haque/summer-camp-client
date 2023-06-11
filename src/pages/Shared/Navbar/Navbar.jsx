@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
 
     const handleLogOut = () => {
         logOut()
@@ -38,6 +40,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to='/'><img src="https://i.ibb.co/cgt0bFp/logo.png" alt="" className='h-20 hidden lg:flex' /></Link>
+                <div className='ml-5'>
+                    <DarkModeToggle
+                        onChange={setIsDarkMode}
+                        checked={isDarkMode}
+                        size={80}
+                    />
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
