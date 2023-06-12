@@ -16,9 +16,9 @@ const AllClasses = () => {
     return (
         <div className='grid  grid-cols-1 lg:grid-cols-3 gap-5 my-12'>
             {
-                allClasses.map(classes => <Classes
-                key={classes._id}
-                classes={classes}
+                allClasses.map(classesCart => <Classes
+                key={classesCart._id}
+                classesCart={classesCart}
                 ></Classes>)
             }
         </div>

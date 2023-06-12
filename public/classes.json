@@ -5,6 +5,7 @@
         "instructor": "Mehedi Hasan",
         "image":"https://i.ibb.co/ZJJRHdw/close-up-hand-writing-song.jpg",
         "students": 55,
+        "seats": 50,
         "price": 14.7
     },
     {
@@ -13,6 +14,7 @@
         "instructor": "Tanha Jannat",
         "image":"https://i.ibb.co/WtDwkM9/beautiful-romantic-girls-park-with-violin.jpg",
         "students": 75,
+        "seats": 40,
         "price": 14.7
     },
     {
@@ -21,6 +23,7 @@
         "instructor": "Afsana Haque",
         "image":"https://i.ibb.co/x2z1N7R/kids-being-part-sunday-school-1.jpg",
         "students": 80,
+        "seats": 35,
         "price": 14.5
     },
     {
@@ -29,6 +32,7 @@
         "instructor": "Antu Haque",
         "image":"https://i.ibb.co/z53Tr6j/Class-5-770x440.jpg",
         "students": 50,
+        "seats": 25,
         "price": 12.5
     },
     {
@@ -37,6 +41,7 @@
         "instructor": "Sayem Sorkar",
         "image":"https://i.ibb.co/C1fbmtf/instructor4.jpg",
         "students": 49,
+        "seats": 45,
         "price": 14.5
     },
     {
@@ -45,6 +50,7 @@
         "instructor": "Md Riyad",
         "image":"https://i.ibb.co/fd7W3m4/Class-4-770x440.jpg",
         "students": 65,
+        "seats": 0,
         "price": 12.5
     }
 ]

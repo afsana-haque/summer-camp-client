@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import DarkModeToggle from "react-dark-mode-toggle";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
-    const { user, logOut, isDarkMode, setIsDarkMode} = useContext(AuthContext);
-   
+    const { user, logOut, isDarkMode, setIsDarkMode } = useContext(AuthContext);
+
     console.log(isDarkMode)
 
     const handleLogOut = () => {
@@ -19,7 +20,13 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allInstructors'>Instructors</Link></li>
         <li><Link to='/allClasses'>Classes</Link></li>
+        <li><Link to='/'><button className="flex gap-2">
+            <FaShoppingCart/>
+        <div className="badge badge-info text-white">+0</div>
+        </button></Link></li>
+
         <li><Link> Dashboard</Link></li>
+
 
         {
             user ? <>
