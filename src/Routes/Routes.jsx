@@ -8,6 +8,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AllInstructors from "../pages/Instructors/AllInstructors";
 import AllClasses from "../pages/AllClasses/AllClasses";
+import Dashboard from "../Layout/Dashboard";
+import MySelect from "../pages/Dashboard/MySelect/MySelect";
 
 export const router = createBrowserRouter([
     {
@@ -37,4 +39,14 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'mySelect',
+                element: <MySelect></MySelect>
+            }
+        ]
+    }
 ]);
