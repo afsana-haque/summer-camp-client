@@ -1,24 +1,32 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Classes = ({ classesCart }) => {
-    const { name, image, instructor, price, students, seats } = classesCart;
+    const { name, image, instructor, price, students, seats, _id } = classesCart;
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleAddToCart = classesCart => {
         console.log(classesCart)
         if (user) {
-            fetch('http://localhost:5000/carts')
+            const cartItem = {classesId: _id, name, image, price, email: user.email}
+            fetch('http://localhost:5000/carts', {
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body:JSON.stringify(cartItem)
+            })
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Your work has been saved',
+                            title: 'Class added on tne cart',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -35,7 +43,7 @@ const Classes = ({ classesCart }) => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login')
+                    navigate('/login', {state: {from: location}})
                 }
             })
         }
