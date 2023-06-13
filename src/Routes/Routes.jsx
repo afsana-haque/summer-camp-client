@@ -10,6 +10,8 @@ import AllInstructors from "../pages/Instructors/AllInstructors";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import Dashboard from "../Layout/Dashboard";
 import MySelect from "../pages/Dashboard/MySelect/MySelect";
+import AddAClass from "../pages/Dashboard/instructors/AddAClass";
+import PrivateRoute from "../providers/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -41,11 +43,15 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'mySelect',
                 element: <MySelect></MySelect>
+            },
+            {
+                path: 'addAClass',
+                element: <AddAClass></AddAClass>
             }
         ]
     }
