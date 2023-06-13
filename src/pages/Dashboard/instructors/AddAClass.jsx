@@ -23,9 +23,9 @@ const AddAClass = () => {
             console.log(imgResponse);
             if(imgResponse.success){
                 const imgURL = imgResponse.data.display_url;
-                const {name, instructorName, instructorEmail, price, availableSeats
+                const {name,  instructor, students, price, seats
                 } = data;
-                const newItem = {name, instructorName, instructorEmail, price: parseFloat(price), availableSeats, image:imgURL};
+                const newItem = {name, instructor, students, price: parseFloat(price), seats, image:imgURL};
                 console.log(newItem);
                 fetch("http://localhost:5000/classes", {
                     method:"POST",
@@ -53,6 +53,7 @@ const AddAClass = () => {
 
     };
 
+
     return (
         <div className='w-full px-20 my-12 '>
             <form onSubmit={handleSubmit(onSubmit)} className='bg-gray-200 p-10 rounded'>
@@ -76,13 +77,13 @@ const AddAClass = () => {
                     <label className="label">
                         <span className="label-text">Instructor name</span>
                     </label>
-                    <input type="text" placeholder="Instructor name" {...register("instructorName", {required: true})}  className="input input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Instructor name" {...register("instructor", {required: true})}  className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text">Instructor email</span>
+                        <span className="label-text">Total Students</span>
                     </label>
-                    <input type="email" placeholder="Instructor email" {...register("instructorEmail", {required: true})} className="input input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Total students" {...register("students", {required: true})} className="input input-bordered w-full max-w-xs" />
                 </div>
                 </div>
                 <div className='grid lg:grid-cols-2 mb-4'>
@@ -90,7 +91,7 @@ const AddAClass = () => {
                     <label className="label">
                         <span className="label-text">Available seats</span>
                     </label>
-                    <input type="number" placeholder="Available seats" {...register("availableSeats", {required: true})} className="input input-bordered w-full max-w-xs" />
+                    <input type="number" placeholder="Available seats" {...register("seats", {required: true})} className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

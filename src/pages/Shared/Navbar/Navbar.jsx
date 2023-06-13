@@ -8,6 +8,8 @@ import useCart from '../../../hooks/useCart';
 const Navbar = () => {
     const { user, logOut, isDarkMode, setIsDarkMode } = useContext(AuthContext);
     const [cart] = useCart();
+    const isAdmin = true;
+    const isInstructors = false;
 
     const handleLogOut = () => {
         logOut()
@@ -20,10 +22,22 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allInstructors'>Instructors</Link></li>
         <li><Link to='/allClasses'>Classes</Link></li>
-        <li><Link to='/dashboard/mySelect'><button className="flex gap-2">
-            <FaShoppingCart/>
-        <div className="badge badge-info text-white">+{cart?.length || 0}</div>
-        </button></Link></li>
+        {isAdmin || isInstructors ? "" :
+            <li><Link to='/dashboard/mySelect'><button className="flex gap-2">
+                <FaShoppingCart />
+                <div className="badge badge-info text-white">+{cart?.length || 0}</div>
+            </button></Link></li>
+        }
+        {isAdmin &&
+            <li><Link to='/dashboard/manageClasses'><button className="flex gap-2">
+                Admin Dashboard
+            </button></Link></li>
+        }
+        {isInstructors &&
+            <li><Link to='/dashboard/addAClass'><button className="flex gap-2">
+                Instructors Dashboard
+            </button></Link></li>
+        }
 
         {
             user ? <>

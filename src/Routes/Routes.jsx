@@ -12,6 +12,7 @@ import Dashboard from "../Layout/Dashboard";
 import MySelect from "../pages/Dashboard/MySelect/MySelect";
 import AddAClass from "../pages/Dashboard/instructors/AddAClass";
 import PrivateRoute from "../providers/PrivateRoute";
+import ManageClasses from "../pages/AdminPages/ManageClasses/ManageClasses";
 
 export const router = createBrowserRouter([
     {
@@ -52,7 +53,11 @@ export const router = createBrowserRouter([
             {
                 path: 'addAClass',
                 element: <AddAClass></AddAClass>
-            }
+            },
+            {
+                path:'manageClasses',
+                element: <ManageClasses></ManageClasses>
+            },
         ]
     }
 ]);
