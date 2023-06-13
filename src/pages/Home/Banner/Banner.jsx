@@ -14,7 +14,7 @@ const Banner = () => {
                         <h3 className='lg:text-3xl text-xl font-bold text-orange-400 pb-4'>Playing Guitar —</h3>
                         <h2 className='lg:text-5xl text-xl font-bold text-white pb-4'>Realy Easy</h2>
                         <p className='text-gray-100 pb-4'>Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien euismod. In id tempus<br></br> metus. Donec eu volutpat nibh, in maximus ligula.</p>
-                        <button className='btn btn-warning bg-orange-900 text-white'>Read More</button>
+                        <button className='btn btn-warning bg-orange-800 text-white'>Read More</button>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@ const Banner = () => {
                         <h3 className='lg:text-3xl text-xl font-bold text-orange-400 pb-4'>Playing Guitar —</h3>
                         <h2 className='lg:text-5xl text-xl font-bold text-white pb-4'>Realy Easy</h2>
                         <p className='text-gray-100 pb-4'>Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien euismod. In id tempus<br></br> metus. Donec eu volutpat nibh, in maximus ligula.</p>
-                        <button className='btn btn-warning bg-orange-900 text-white'>Read More</button>
+                        <button className='btn btn-warning bg-orange-800 text-white'>Read More</button>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const Banner = () => {
                         <h3 className='lg:text-3xl text-xl font-bold text-orange-400 pb-4'>Playing Guitar —</h3>
                         <h2 className='lg:text-5xl text-xl font-bold text-white pb-4'>Realy Easy</h2>
                         <p className='text-gray-100 pb-4'>Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien euismod. In id tempus<br></br> metus. Donec eu volutpat nibh, in maximus ligula.</p>
-                        <button className='btn btn-warning bg-orange-900 text-white'>Read More</button>
+                        <button className='btn btn-warning bg-orange-800 text-white'>Read More</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Banner = () => {
                         <h3 className='lg:text-3xl text-xl font-bold text-orange-400 pb-4'>Playing Guitar —</h3>
                         <h2 className='lg:text-5xl text-xl font-bold text-white pb-4'>Realy Easy</h2>
                         <p className='text-gray-100 pb-4'>Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien euismod. In id tempus<br></br> metus. Donec eu volutpat nibh, in maximus ligula.</p>
-                        <button className='btn btn-warning bg-orange-900 text-white'>Read More</button>
+                        <button className='btn btn-warning bg-orange-800 text-white'>Read More</button>
                     </div>
                 </div>
             </div>

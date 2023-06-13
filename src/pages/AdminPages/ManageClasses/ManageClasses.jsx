@@ -1,9 +1,10 @@
 import React from 'react';
 
 const ManageClasses = () => {
+
     return (
         <div>
-            <h2>This Mange Class</h2>
+            <h2>Manege Classes</h2>
         </div>
     );
 };

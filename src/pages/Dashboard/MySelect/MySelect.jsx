@@ -39,7 +39,7 @@ const MySelect = () => {
         <div className='w-full px-20 my-12'>
             <div className='flex justify-between'>
                 <h3 className='text-2xl font-semibold'>Total select classes: {cart.length}</h3>
-                <button className="btn btn-warning bg-orange-950 text-white">Pay</button>
+                <button className="btn btn-warning bg-orange-800 text-white">Pay</button>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">

@@ -35,8 +35,8 @@ const Dashboard = () => {
           { admin &&
             <div>
               <li>
-                <Link to='/dashboard/mySelect'> Manage Classes</Link></li>
-              <li><Link to='/dashboard/myEnroll'> Manage Users</Link></li>
+                <Link to='/dashboard/manageClasses'> Manage Classes</Link></li>
+              <li><Link to='/dashboard/manageUser'> Manage Users</Link></li>
             </div>
           }
           <div className="divider"></div>

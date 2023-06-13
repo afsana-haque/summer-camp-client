@@ -37,7 +37,7 @@ const AddAClass = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    if(data.insertedId > 0){
+                    if(data.insertedId){
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -101,7 +101,7 @@ const AddAClass = () => {
                 </div>
                 </div>
                 <div className='text-center mt-4'>
-                <input type="submit" value="ADD Class" className='btn btn-warning bg-orange-950 text-white' />
+                <input type="submit" value="ADD Class" className='btn btn-warning bg-orange-800 text-white' />
 
                 </div>
             </form>

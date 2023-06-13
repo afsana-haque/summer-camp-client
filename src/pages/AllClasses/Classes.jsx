@@ -62,7 +62,7 @@ const Classes = ({ classesCart }) => {
                 <p>Available Seats: {seats}</p>
                 <p>Price: ${price}</p>
                 <div className="card-actions justify-end">
-                    <button disabled={seats === 0 ? true : false} onClick={() => handleAddToCart(classesCart)} className="btn btn-warning bg-orange-950 text-white">select</button>
+                    <button disabled={seats === 0 ? true : false} onClick={() => handleAddToCart(classesCart)} className="btn btn-warning bg-orange-800 text-white">select</button>
                 </div>
             </div>
         </div>

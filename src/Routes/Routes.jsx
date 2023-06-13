@@ -13,6 +13,7 @@ import MySelect from "../pages/Dashboard/MySelect/MySelect";
 import AddAClass from "../pages/Dashboard/instructors/AddAClass";
 import PrivateRoute from "../providers/PrivateRoute";
 import ManageClasses from "../pages/AdminPages/ManageClasses/ManageClasses";
+import ManageUser from "../pages/AdminPages/ManageClasses/ManageUser";
 
 export const router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
             {
                 path:'manageClasses',
                 element: <ManageClasses></ManageClasses>
+            },
+            {
+                path:'manageUser',
+                element: <ManageUser></ManageUser>
             },
         ]
     }
