@@ -47,7 +47,7 @@ const SignUp = () => {
             })
                 .then(() => {
                     const saveUser = { name: name, email: user?.email };
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://music-school-server-bay.vercel.app/users', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'

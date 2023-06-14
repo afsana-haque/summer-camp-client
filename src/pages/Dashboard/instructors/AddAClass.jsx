@@ -28,7 +28,7 @@ const AddAClass = () => {
                 } = data;
                 const newItem = {name, instructor, total_students: parseInt("0"), price: parseFloat(price), seats, image:imgURL, instructor_email, modules, duration, status: "pending", feedback:"review pending", };
                 console.log(newItem);
-                fetch("http://localhost:5000/classes", {
+                fetch("https://music-school-server-bay.vercel.app/classes", {
                     method:"POST",
                     headers: {
                         'content-type' : 'application/json'
