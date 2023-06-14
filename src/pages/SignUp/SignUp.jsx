@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
     const [error, setError] = useState('');
@@ -20,18 +21,12 @@ const SignUp = () => {
             return;
         }
 
+
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
-                fetch('http://localhost:5000/users',{
-                    method: "POST",
-                    headers:{
-                        'content-type' : 'application/json'
-                    },
-                    body: JSON.stringify(saveUser)
-                })
+                handleUserData(loggedUser, data.name, data.photo)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
@@ -39,10 +34,40 @@ const SignUp = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate(from, {replace: true});
+                //navigate(from, {replace: true});
             })
+
             .catch((error) => console.log(error)
             )
+
+        const handleUserData = (user, name, photoURL) => {
+            updateProfile(user, {
+                displayName: name,
+                photoURL: photoURL,
+            })
+                .then(() => {
+                    const saveUser = { name: name, email: user?.email };
+                    fetch('http://localhost:5000/users', {
+                        method: "POST",
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(saveUser)
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            if (data.insertedId) {
+                                navigate(from, { replace: true });
+                            }
+                        });
+
+                    console.log("user name updated");
+                })
+                .catch((error) => {
+                    console.log(error.message);
+                    setError(error.message);
+                });
+        };
 
     };
 
@@ -91,7 +116,7 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" {...register("photo", { required: true })}  placeholder="Photo URL" className="input input-bordered" />
+                        <input type="text" {...register("photo", { required: true })} placeholder="Photo URL" className="input input-bordered" />
                         {errors.name && <span className='text-red-700 mt-3'>Photo URL is required</span>}
                     </div>
                     <input className="btn btn-warning bg-orange-950 text-white" type="submit" value="Sign Up" />

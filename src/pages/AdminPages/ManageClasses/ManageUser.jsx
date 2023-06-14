@@ -28,6 +28,26 @@ const ManageUser = () => {
         })
             
         }
+
+        const handleManageInstructor = user => {
+            fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+                method: 'PATCH'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.modifiedCount){
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Instructor Now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        }
     
 
     return (
@@ -54,7 +74,7 @@ const ManageUser = () => {
                                 <button onClick={() => handleManageAdmin(user)} className="btn btn-warning bg-orange-800 text-white"> Admin</button>
                                     }</td>
                                 <td>{user.role === "instructor" ? "instructor" :
-                                <button className="btn btn-warning bg-orange-800 text-white">instructor</button>
+                                <button onClick={() => handleManageInstructor(user)} className="btn btn-warning bg-orange-800 text-white">instructor</button>
                                     }</td>
                             </tr>)
                         }

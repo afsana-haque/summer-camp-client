@@ -4,12 +4,14 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import DarkModeToggle from "react-dark-mode-toggle";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from '../../../hooks/useCart';
+import useAdmin from '../../../hooks/useAdmin';
+import useInstructor from '../../../hooks/useInstructor';
 
 const Navbar = () => {
     const { user, logOut, isDarkMode, setIsDarkMode } = useContext(AuthContext);
     const [cart] = useCart();
-    const isAdmin = true;
-    const isInstructors = false;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     const handleLogOut = () => {
         logOut()
@@ -22,7 +24,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allInstructors'>Instructors</Link></li>
         <li><Link to='/allClasses'>Classes</Link></li>
-        {isAdmin || isInstructors ? "" :
+        {isAdmin || isInstructor ? "" :
             <li><Link to='/dashboard/mySelect'><button className="flex gap-2">
                 <FaShoppingCart />
                 <div className="badge badge-info text-white">+{cart?.length || 0}</div>
@@ -33,7 +35,7 @@ const Navbar = () => {
                 Admin Dashboard
             </button></Link></li>
         }
-        {isInstructors &&
+        {isInstructor &&
             <li><Link to='/dashboard/addAClass'><button className="flex gap-2">
                 Instructors Dashboard
             </button></Link></li>
